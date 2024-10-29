@@ -12,7 +12,7 @@ INITIAL_WAIT=60
 # Add a DNS TXT record
 add_txt_record() {
     echo "Adding record with value $CERTBOT_VALIDATION"
-    curl "https://www.namesilo.com/api/dnsAddRecord?version=1&type=xml&key=$API_KEY&domain=$DOMAIN&rrtype=TXT&rrhost=$SUBDOMAIN&rrvalue=$CERTBOT_VALIDATION&rrttl=3600"
+    curl -s "https://www.namesilo.com/api/dnsAddRecord?version=1&type=xml&key=$API_KEY&domain=$DOMAIN&rrtype=TXT&rrhost=$SUBDOMAIN&rrvalue=$CERTBOT_VALIDATION&rrttl=3600"
 }
 
 # Check if the DNS record exists and matches the validation value
